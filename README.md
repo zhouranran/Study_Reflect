@@ -122,7 +122,8 @@ public class ReflectField {
         System.out.println(field.get(person));
 
         //通过Class 得到该类的所有属性
-        Arrays.stream(personCLa.getDeclaredFields()).forEach(e-   			                 >System.out.println(e));
+        Arrays.stream(personCLa.getDeclaredFields()).forEach(e-   			                 
+        >System.out.println(e));
 
         /**
          *得到private修饰的Field name='name' 区分大小写
@@ -175,7 +176,8 @@ public class ReflectConstuctor {
         Class personCLa =  Person.class;
 
         //通过Class获取public修饰的Constructor
-        Arrays.stream(personClazz.getConstructors()).forEach(cons-                           >System.out.println(cons));
+        Arrays.stream(personClazz.getConstructors()).forEach(cons-                           
+        >System.out.println(cons));
         /**
          * 得到特定的Constructor
          * 首先得到无参的构造方法 并创建对象
@@ -185,10 +187,11 @@ public class ReflectConstuctor {
         System.out.println(person);
 
         //通过Class获取所有的Constructor
-        Arrays.stream(personClazz.getDeclaredConstructors()).forEach(cons-                   >System.out.println(cons));
+        Arrays.stream(personClazz.getDeclaredConstructors()).forEach(cons-                   
+        >System.out.println(cons));
 
         //得到一个拥有name 和 age 的constructor
-        Constructor privateConstructor =                                                     personClazz.getDeclaredConstructor(String.class,int.class);
+        Constructor privateConstructor =                                                      personClazz.getDeclaredConstructor(String.class,int.class);
         //忽略访问权限修饰符
         privateConstructor.setAccessible(true);
         Object privatePerson = privateConstructor.newInstance("star",29);
@@ -235,8 +238,10 @@ public class ReflectMethod {
         //获得Class
         Class personCLa =  Person.class;
         //通过Class获取public修饰的Method
-        Arrays.stream(personCLa.getMethods()).forEach(method-                                 >System.out.println(method));
-        Arrays.stream(personCLa.getMethods()).forEach(method-                                 >System.out.print(method.getName()));
+        Arrays.stream(personCLa.getMethods()).forEach(method-                                 
+        >System.out.println(method));
+        Arrays.stream(personCLa.getMethods()).forEach(method-                                 
+        >System.out.print(method.getName()));
         /**
          * 得到特定的Method
          * 执行方法invoke();
